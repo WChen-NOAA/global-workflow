@@ -85,6 +85,7 @@ cat > input.nml <<EOF
   blocksize = ${blocksize}
   chksum_debug = ${chksum_debug}
   dycore_only = ${dycore_only}
+  pdc = ${pdc}
   ccpp_suite = ${CCPP_SUITE}
   ${atmos_model_nml:-}
 /

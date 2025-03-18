@@ -262,6 +262,7 @@ FV3_predet(){
   # various debug options
   no_dycore=${no_dycore:-".false."}
   dycore_only=${adiabatic:-".false."}
+  pdc=${pdc:-".false."}
   chksum_debug=${chksum_debug:-".false."}
   print_freq=${print_freq:-6}
 
