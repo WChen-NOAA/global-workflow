@@ -1,9 +1,9 @@
 {% set cycle_YMDH = current_cycle | to_YMDH %}
 {% set cycle_YMD = current_cycle | to_YMD %}
 {% set cycle_HH = current_cycle | strftime("%H") %}
-{% set atm_dir = cycle_YMDH ~ "/atmos" %}
+{% set atm_dir = RUN + "." ~ cycle_YMD ~ "/" ~ cycle_HH ~ "/model/atmos/input" %}
 target:
-    tarball : "{{ FETCHDIR }}/{{ cycle_YMDH }}.tar"
+    tarball : "{{ FETCHDIR }}/{{ cycle_YMDH }}/atm_cold.tar"
     on_hpss: True
     contents:
         # ATM

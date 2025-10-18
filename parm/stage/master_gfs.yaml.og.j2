@@ -68,7 +68,6 @@
 
 # Declare to-be-filled lists of member COM directories
 # ----------------------------------------------------
-{% set COMOUT_ATMOS_FETCH_MEM_list = [] %}
 {% set COMOUT_ATMOS_INPUT_MEM_list = [] %}
 {% set COMOUT_ATMOS_RESTART_PREV_MEM_list = [] %}
 {% set COMOUT_ATMOS_RESTART_MEM_list = [] %}
@@ -101,7 +100,7 @@
                                     '${YMD}':previous_cycle_YMD,
                                     '${HH}':previous_cycle_HH,
                                     '${MEMDIR}': mem_char }) %}
-    {% set COMOUT_ATMOS_FETCH_MEM = COM_ATMOS_FETCH_TMPL | replace_tmpl(current_cycle_dict) %}
+
     {% set COMOUT_ATMOS_INPUT_MEM = COM_ATMOS_INPUT_TMPL | replace_tmpl(current_cycle_dict) %}
     {% set COMOUT_ATMOS_RESTART_PREV_MEM = COM_ATMOS_RESTART_TMPL | replace_tmpl(previous_cycle_dict) %}
     {% set COMOUT_ATMOS_RESTART_MEM = COM_ATMOS_RESTART_TMPL | replace_tmpl(current_cycle_dict) %}
@@ -115,7 +114,6 @@
     {% set COMOUT_CHEM_ANALYSIS_MEM = COM_CHEM_ANALYSIS_TMPL | replace_tmpl(current_cycle_dict) %}
 
     # Append the member COM directories
-    {% do COMOUT_ATMOS_FETCH_MEM_list.append(COMOUT_ATMOS_FETCH_MEM)%}
     {% do COMOUT_ATMOS_INPUT_MEM_list.append(COMOUT_ATMOS_INPUT_MEM)%}
     {% do COMOUT_ATMOS_RESTART_PREV_MEM_list.append(COMOUT_ATMOS_RESTART_PREV_MEM)%}
     {% do COMOUT_ATMOS_RESTART_MEM_list.append(COMOUT_ATMOS_RESTART_MEM)%}
